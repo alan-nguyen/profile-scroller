@@ -24,6 +24,12 @@ const data = [
     image: 'https://randomeuser.me/api/portraits/men/83.jpg'
   }
 ];
+
+const profiles = profileIterator(data);
+
+// Next Event
+document.getElementById('next').addEventListener('click', nextProfile);
+
 // Profile Iterator
 function profileIteration(profiles) {
   let nextIndex = 0;
