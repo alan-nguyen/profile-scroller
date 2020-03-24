@@ -30,6 +30,21 @@ const profiles = profileIterator(data);
 // Next Event
 document.getElementById('next').addEventListener('click', nextProfile);
 
+// Next Profile Display
+function nextProfile() {
+  const currentProfile = profile.next().value;
+
+  document.getElementById('profileDisplay').innerHTML = `
+    <ul class="list-group">
+      <li class="list-group-item">Name: ${currentProfile.name}</li>
+      <li class="list-group-item">Age: ${currentProfile.age}</li>
+      <li class="list-group-item">Location: ${currentProfile.location}</li>
+      <li class="list-group-item">Preference: ${currentProfile.gender}</li>
+      <li class="list-group-item">Looking for: ${currentProfile.lookingfor}</li>
+    </ul>
+  `;
+}
+
 // Profile Iterator
 function profileIteration(profiles) {
   let nextIndex = 0;
