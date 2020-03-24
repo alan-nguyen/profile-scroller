@@ -5,7 +5,7 @@ const data = [
     gender: 'male',
     lookingfor: 'female',
     location: 'Boston MA',
-    image: 'https://randomeuser.me/api/portraits/men/82.jpg'
+    image: 'https://randomuser.me/api/portraits/men/82.jpg'
   },
   {
     name: 'Jen Smith',
@@ -13,7 +13,7 @@ const data = [
     gender: 'female',
     lookingfor: 'male',
     location: 'Miami FL',
-    image: 'https://randomeuser.me/api/portraits/women/82.jpg'
+    image: 'https://randomuser.me/api/portraits/women/82.jpg'
   },
   {
     name: 'William Johnson',
@@ -21,7 +21,7 @@ const data = [
     gender: 'male',
     lookingfor: 'female',
     location: 'Lynn MA',
-    image: 'https://randomeuser.me/api/portraits/men/83.jpg'
+    image: 'https://randomuser.me/api/portraits/men/83.jpg'
   }
 ];
 
@@ -32,7 +32,7 @@ document.getElementById('next').addEventListener('click', nextProfile);
 
 // Next Profile Display
 function nextProfile() {
-  const currentProfile = profile.next().value;
+  const currentProfile = profiles.next().value;
 
   document.getElementById('profileDisplay').innerHTML = `
     <ul class="list-group">
@@ -43,10 +43,14 @@ function nextProfile() {
       <li class="list-group-item">Looking for: ${currentProfile.lookingfor}</li>
     </ul>
   `;
+
+  document.getElementById(
+    'imageDisplay'
+  ).innerHTML = `<img src="${currentProfile.image}">`;
 }
 
 // Profile Iterator
-function profileIteration(profiles) {
+function profileIterator(profiles) {
   let nextIndex = 0;
 
   return {
